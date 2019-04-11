@@ -2,11 +2,12 @@
 
 import time
 
-
 class DataConvertError(Exception):
+    def __init__(self, value):
+        self.value = value
 
-    def __str__(self, desc):
-        return desc
+    def __repr__(self):
+        return str(self.value)
 
 
 class SnowFlake(object):
